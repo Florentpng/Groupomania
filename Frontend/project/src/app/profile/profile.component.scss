@@ -1,0 +1,201 @@
+.groupomania {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    padding: 10px 30px;
+    .formulaire {
+        box-shadow: #3366FF 0px 2px 4px 0px, #3366FF 0px 2px 16px 0px;
+        font-family: 'Cardo', serif;
+        border: 2px solid #3366FF;
+        border-radius: 15px;
+        padding: 0px 20px 20px 20px;
+        background-color: #cedaff;
+        button {
+            background-color: #cedaff;
+            border: 2px solid #9bb6ff;
+            padding: 12px 32px;
+            margin-bottom: 5%;
+            margin-left: 25%;
+            border-radius: 7px;
+            transition: all 0.4s ease-in-out;
+            cursor: pointer;
+            will-change: transform;
+            &:hover {
+                background-color: #3366FF;
+                color: white;
+                border: 2px solid #cedaff;
+                transform: scale(1.15);
+            }
+        }
+        .form {
+            font-family: 'Cardo', serif;
+            margin-bottom: 10px;
+        }
+        .createForm {
+            font-family: 'Cardo', serif;
+            
+            .form {
+                margin-bottom: 10px;
+            }
+            .name {
+                input {
+                    border-radius: 4px;
+                    box-sizing: border-box;
+                    width: 50%;
+                    border: 2px solid #9bb6ff;
+                    border-top: none;
+                    background-color: #E8F0FE;
+                    padding: 12px 20px;
+                    transition: width 0.4s ease-in-out;
+                    &:focus {
+                        width: 76%;
+                    }
+                }
+            }
+            .lastName {
+                input {
+                    border-radius: 4px;
+                    box-sizing: border-box;
+                    width: 51%;
+                    border: 2px solid #9bb6ff;
+                    border-top: none;
+                    background-color: #E8F0FE;
+                    padding: 12px 20px;
+                    transition: width 0.4s ease-in-out;
+                    &:focus {
+                        width: 77%;
+                    }
+                }
+            }
+            .age {
+                input {
+                    border-radius: 4px;
+                    box-sizing: border-box;
+                    width: 30%;
+                    border: 2px solid #9bb6ff;
+                    border-top: none;
+                    background-color: #E8F0FE;
+                    padding: 12px 20px;
+                    
+                }
+            }
+            .submit {
+                button {
+                    background-color: #cedaff;
+                    border: 2px solid #9bb6ff;
+                    padding: 12px 32px;
+                    margin-left: 32%;
+                    margin-top: 10px;
+                    margin-bottom: 0%;
+                    border-radius: 7px;
+                    transition: all 0.4s ease-in-out;
+                    cursor: pointer;
+                    will-change: transform;
+                    &:hover {
+                        background-color: #3366FF;
+                        color: white;
+                        border: 2px solid #cedaff;
+                        transform: scale(1.15);
+                    }
+                }
+            }
+        }
+    }
+    .profile {
+        box-shadow: #3366FF 0px 2px 4px 0px, #3366FF 0px 2px 16px 0px;
+        font-family: 'Cardo', serif;
+        border: 2px solid #3366FF;
+        border-radius: 15px;
+        padding: 0px 20px 20px 20px;
+        background-color: #cedaff;
+        .buttons {
+            display: flex;
+            button {
+                background-color: #cedaff;
+                border: 2px solid #9bb6ff;
+                padding: 12px 32px;
+                margin-right: 5%;
+                margin-left: 5%;
+                margin-bottom: 5%;
+                border-radius: 7px;
+                transition: all 0.4s ease-in-out;
+                cursor: pointer;
+                will-change: transform;
+                &:hover {
+                    background-color: #3366FF;
+                    color: white;
+                    border: 2px solid #cedaff;
+                    transform: scale(1.15);
+                }
+            }
+        }
+        .modifyForm {
+            font-family: 'Cardo', serif;
+            
+            .form {
+                margin-bottom: 10px;
+            }
+            .name {
+                input {
+                    border-radius: 4px;
+                    box-sizing: border-box;
+                    width: 50%;
+                    border: 2px solid #9bb6ff;
+                    border-top: none;
+                    background-color: #E8F0FE;
+                    padding: 12px 20px;
+                    transition: width 0.4s ease-in-out;
+                    &:focus {
+                        width: 76%;
+                    }
+                }
+            }
+            .lastName {
+                input {
+                    border-radius: 4px;
+                    box-sizing: border-box;
+                    width: 51%;
+                    border: 2px solid #9bb6ff;
+                    border-top: none;
+                    background-color: #E8F0FE;
+                    padding: 12px 20px;
+                    transition: width 0.4s ease-in-out;
+                    &:focus {
+                        width: 77%;
+                    }
+                }
+            }
+            .age {
+                input {
+                    border-radius: 4px;
+                    box-sizing: border-box;
+                    width: 30%;
+                    border: 2px solid #9bb6ff;
+                    border-top: none;
+                    background-color: #E8F0FE;
+                    padding: 12px 20px;
+                    
+                }
+            }
+            button {
+                background-color: #cedaff;
+                border: 2px solid #9bb6ff;
+                padding: 12px 32px;
+                margin-left: 35%;
+                margin-top: 10px;
+                border-radius: 7px;
+                transition: all 0.4s ease-in-out;
+                cursor: pointer;
+                will-change: transform;
+                &:hover {
+                    background-color: #3366FF;
+                    color: white;
+                    border: 2px solid #cedaff;
+                    transform: scale(1.15);
+                }
+            }
+        }
+    }
+    
+}

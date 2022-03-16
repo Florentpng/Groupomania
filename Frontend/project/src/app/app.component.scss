@@ -1,0 +1,150 @@
+header {
+    display: flex;
+    border-radius: 50px 2px 2px 50px;
+    .logo {
+        padding: 20px;
+        width: 49%;
+        background-color: white;
+        border: 2px solid #3366FF;
+        border-right: none;
+        border-radius: 50px 0 0 50px;
+        img {
+            width: 35%
+        } 
+    }
+    .gradiant {
+        box-shadow: white 0px -30px 36px -28px inset;
+        width: 21%;
+        border-top: 2px solid #3366FF;
+        border-bottom: 2px solid #3366FF;
+        background:
+            linear-gradient(225deg, white 25%, transparent 25%) -00px 0,
+            linear-gradient(315deg, white 25%, transparent 25%) -0px 0,
+            linear-gradient(45deg, white 25%, transparent 25%),
+            linear-gradient(135deg, white 25%, transparent 25%);
+        background-size: 50px 50px;
+        background-color: #3366FF;
+    }
+    
+    nav {
+        box-shadow: white 0px -30px 36px -28px inset;
+        border-top: 2px solid #3366FF;
+        border-bottom: 2px solid #3366FF;
+        border-right: 2px solid #3366FF;
+        display: flex;
+        justify-content: space-between;
+        background-color: #3366FF;
+        padding: 20px 20px 20px 20px;
+        width: 40%;
+        border-radius: 0 50px 50px 0;
+        i {
+            margin-right: 10px;
+        }
+        .register {
+            a {
+                font-family: 'Palanquin Dark', sans-serif;
+                border: 1px solid white;
+                padding: 10px;
+                color: white;
+                text-decoration: none;
+                border-radius: 50px;
+                transition: background-color 750ms, color 750ms;
+                &:hover {
+                    color: #3366FF;
+                    background-color: white;
+                }
+            }
+        }
+        .login {
+            a {
+                font-family: 'Palanquin Dark', sans-serif;
+                border: 1px solid white;
+                padding: 10px;
+                color: white;
+                text-decoration: none;
+                border-radius: 50px;
+                transition: background-color 750ms, color 750ms;
+                &:hover {
+                    color: #3366FF;
+                    background-color: white;
+                }
+            }
+        }
+        .profile {
+            a {
+                font-family: 'Palanquin Dark', sans-serif;
+                border: 1px solid white;
+                padding: 10px;
+                color: white;
+                text-decoration: none;
+                border-radius: 50px;
+                transition: background-color 750ms, color 750ms;
+                &:hover {
+                    color: #3366FF;
+                    background-color: white;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    display: flex;
+    border-radius: 50px 2px 2px 50px;
+    .logo {
+        box-shadow: white 0px 30px 36px -28px inset;
+        padding: 20px;
+        width: 49%;
+        background-color: #3366FF;
+        border: 2px solid #3366FF;
+        border-right: none;
+        border-radius: 50px 0 0 50px;
+        img {
+            width: 35%
+        }
+    }
+    .gradiant {
+        box-shadow: white 0px 30px 36px -28px inset;
+        width: 21%;
+        border-top: 2px solid #3366FF;
+        border-bottom: 2px solid #3366FF;
+        background:
+            linear-gradient(135deg, #3366FF 25%, transparent 25%),
+            linear-gradient(45deg, #3366FF 25%, transparent 25%),
+            linear-gradient(315deg, #3366FF 25%, transparent 25%) -0px 0,
+            linear-gradient(225deg, #3366FF 25%, transparent 25%) -0px 0;
+        background-size: 50px 50px;
+        background-color: white;
+    }
+    .social {
+        border-top: 2px solid #3366FF;
+        border-bottom: 2px solid #3366FF;
+        border-right: 2px solid #3366FF;
+        justify-content: space-between;
+        background-color: white;
+        padding: 0px 20px 0px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 40%;
+        border-radius: 0 50px 50px 0;
+        .linkdin {
+            font-family: 'Palanquin Dark', sans-serif;
+            #linkdin {
+                color: black;
+                &:hover {
+                    color: #3366FF;
+                }
+            }
+        }
+        .openclassrooms {
+            font-family: 'Palanquin Dark', sans-serif;
+            #openclassrooms {
+                color: black;
+                &:hover {
+                    color: #3366FF;
+                }
+            }
+        }  
+    }
+}

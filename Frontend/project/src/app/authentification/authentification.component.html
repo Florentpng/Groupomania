@@ -1,0 +1,16 @@
+<div class="groupomania">
+    <div class="formulaire">
+        <h2>Type your mail adress and your password to register</h2>
+        <div class="email form">
+            <label for="userEmail">Email: </label>
+            <input name="email" type="email" id="email" [(ngModel)]="email">
+        </div>
+        <div class="password form">
+            <label for="userPassword">Password: </label>
+            <input name="password" type="password" id="password" [(ngModel)]="password">
+        </div>
+        <div class="submit form">
+            <button (click)="ngOnPost()">Register</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+.groupomania {
+    display: flex;
+    flex-direction: row-reverse;
+    .post {
+        position: fixed;
+        margin-top: 20px;
+        margin-right: 20px;
+        transition: all 0.4s ease-in-out;
+        cursor: pointer;
+        will-change: transform;
+        &:hover {
+            transform: scale(1.15);
+        }
+        a {
+            border-radius: 20px;
+            padding: 12px 20px;
+            box-shadow: #3366FF 0px 2px 4px 0px, #3366FF 0px 2px 16px 0px;
+            font-family: 'Cardo', serif;
+            border: 2px solid #3366FF;
+            border-radius: 15px;
+            background-color: #cedaff;
+            text-decoration: none;
+            color: black;
+        }
+    }
+    .products {
+        margin-left: 15px;
+        .card {
+            margin-bottom: 30px;
+            margin-top: 30px;
+            width: 50%;
+            box-shadow: #3366FF 0px 2px 4px 0px, #3366FF 0px 2px 16px 0px;
+            font-family: 'Cardo', serif;
+            border: 2px solid #3366FF;
+            border-radius: 15px;
+            padding: 0px 20px 20px 20px;
+            background-color: #cedaff;
+            overflow: hidden;
+            .up {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: -30px;
+                
+            }
+            #date {
+                font-size: 15px;
+            }
+        }
+    }  
+}
