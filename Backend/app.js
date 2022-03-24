@@ -1,19 +1,28 @@
-const mongoose = require('mongoose');
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const mysql = require('mysql');
 
 const productRoutes = require('./routes/product');
 const userRoutes = require('./routes/user');
 const profileRoutes = require('./routes/profile');
+  
+var con = mysql.createConnection({ // Created the Connection
+    host: "localhost",
+    user: "root",
+    password: "oblivion99"
+});
 
-mongoose.connect('mongodb+srv://Flowze:oblivion99@cluster0.egn6b.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
-    {
-        useNewUrlParser : true,
-        useUnifiedTopology: true
-    })
-.then(() => console.log('Connection à MongoDB réussie !'))
-.catch(() => console.log('Connection à MongoDB échouée !'));
+con.connect(function (err) {
+    if (err) throw err;
+    console.log("Connected!");
+  
+    con.query("USE groupomania",
+        function (err, result) {
+            if (err) throw err;
+            console.log("Using groupomania DB OK");
+        });
+});
 
 const app = express()
 

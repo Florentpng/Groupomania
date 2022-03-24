@@ -1,16 +1,26 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-
-const User = require('../models/User');
+var Sequelize = require('sequelize');
+var sequelize = new Sequelize('groupomania', 'root', 'oblivion99', {
+    host: 'localhost',
+    dialect: 'mysql'
+});
 
 exports.register = (req, res, next) => {
     bcrypt.hash(req.body.password, 10)
         .then((hash) => {
-            const user = new User({
-                email: req.body.email,
-                password: hash
+            var User = sequelize.define('user', {
+                email: {type: Sequelize.STRING, unique: true},
+                password: Sequelize.STRING,
+                userId: Sequelize.STRING
             });
-            user.save()
+            sequelize.sync().then(function() {
+                return User.create({
+                  email: req.body.email,
+                  password: hash,
+                  userId: Math.random().toString(36).slice(2)
+                });
+            })
                 .then(() => res.status(201).json({ message: 'Utilisateur enregistré !' }))
                 .catch(error => res.status(400).json({ error }));
         })
@@ -18,7 +28,12 @@ exports.register = (req, res, next) => {
 };
 
 exports.login = (req, res, next) => {
-    User.findOne({ email: req.body.email })
+    var User = sequelize.define('user', {
+        email: {type: Sequelize.STRING, unique: true},
+        password: Sequelize.STRING,
+        userId: Sequelize.STRING
+    });
+    const user = User.findOne({ raw:true, where: { email: req.body.email }})
         .then(user => {
             if (!user) {
                 return res.status(401).json({ error: 'Utilisateur non trouvé !' });
@@ -29,7 +44,7 @@ exports.login = (req, res, next) => {
                     return res.status(401).json({ error: 'Mot de passe incorrect !' });
                 }
                 res.status(200).json({
-                    userId: user._id,
+                    userId: user.userId,
                     token: jwt.sign(
                         { userId: user._id },
                         'RANDOM_TOKEN_SECRET',
