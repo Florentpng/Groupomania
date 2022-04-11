@@ -1,4 +1,3 @@
-const Profile = require('../models/Profile');
 var Sequelize = require('sequelize');
 var sequelize = new Sequelize('groupomania', 'root', 'oblivion99', {
     host: 'localhost',
@@ -10,7 +9,7 @@ exports.getExistProfile = (req, res, next) => {
         userId: {type: Sequelize.STRING, unique: true},
         name: {type: Sequelize.STRING},
         lastName: Sequelize.STRING,
-        age: Sequelize.STRING
+        age: Sequelize.INTEGER
     });
     const profile = Profile.findOne({ raw:true, where: { userId: req.params.userId }})
         .then(profile => {
@@ -29,7 +28,7 @@ exports.createProfile = (req, res, next) => {
         userId: {type: Sequelize.STRING, unique: true},
         name: {type: Sequelize.STRING},
         lastName: Sequelize.STRING,
-        age: Sequelize.STRING
+        age: Sequelize.INTEGER
     });
     sequelize.sync().then(function() {
         return Profile.create({
@@ -48,7 +47,7 @@ exports.getProfile = (req, res, next) => {
         userId: {type: Sequelize.STRING, unique: true},
         name: {type: Sequelize.STRING},
         lastName: Sequelize.STRING,
-        age: Sequelize.STRING
+        age: Sequelize.INTEGER
     });
     const profile = Profile.findOne({ raw:true, where: { userId: req.params.userId }})
         .then(profile => res.status(200).json(profile))
@@ -60,7 +59,7 @@ exports.deleteProfile = (req, res, next) => {
         userId: {type: Sequelize.STRING, unique: true},
         name: {type: Sequelize.STRING},
         lastName: Sequelize.STRING,
-        age: Sequelize.STRING
+        age: Sequelize.INTEGER
     });
     Profile.destroy({ where: { userId: req.params.userId }})
         .then(() => res.status(200).json({ message: 'Profile modifié !'}))
@@ -72,7 +71,7 @@ exports.modifyProfile = (req, res, next) => {
         userId: {type: Sequelize.STRING, unique: true},
         name: {type: Sequelize.STRING},
         lastName: Sequelize.STRING,
-        age: Sequelize.STRING
+        age: Sequelize.INTEGER
     });
     Profile.update(
         {

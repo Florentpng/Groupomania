@@ -14,6 +14,8 @@ export class HttpService {
 
   private urlAllProduct = "http://localHost:3000/api/product";
   private urlCreateProduct = "http://localHost:3000/api/product/create";
+
+  private urlCreateComment = "http://localHost:3000/api/comment/create";
   
   constructor(private http: HttpClient) { }
 
@@ -43,13 +45,29 @@ export class HttpService {
   getAllProduct() {
     return this.http.get<any>(this.urlAllProduct, {observe: 'response'});
   }
+  getProduct(urlProduct: string) {
+    return this.http.get<any>(urlProduct);
+  }
   getCreateProduct(userId: string, title: string, message: string, imageUrl: string, date: Date, name: string, lastName: string) {
     return this.http.post(this.urlCreateProduct, {userId, title, message, date, imageUrl, name, lastName}, {observe: 'response'});
   }
   getDeleteProduct(urlDeleteProduct: string) {
     return this.http.delete(urlDeleteProduct, {observe: 'response'});
   }
-  getModifyProduct(urlModifyProduct: string) {
-    return this.http.put(urlModifyProduct, {observe: 'response'});
+  getModifyProduct(urlModifyProduct: string, product: {}, messageForm: any, titleForm: any) {
+    return this.http.put(urlModifyProduct, {product, messageForm, titleForm}, {observe: 'response'});
+  }
+
+  getCreateComment(userId: string, message: string, lastName: string, date: string, name: string, productId: string) {
+    return this.http.post(this.urlCreateComment, {userId, message, lastName, date, name, productId}, {observe: 'response'});
+  }
+  getAllComment(urlAllComment: string) {
+    return this.http.get<any>(urlAllComment, {observe: 'response'});
+  }
+  getDeleteComment(urlDeleteComment: string) {
+    return this.http.delete(urlDeleteComment, {observe: 'response'});
+  }
+  getModifyComment(urlModifyComment: string, comment: {}, messageForm: any) {
+    return this.http.put(urlModifyComment, {comment, messageForm}, {observe: 'response'});
   }
 }

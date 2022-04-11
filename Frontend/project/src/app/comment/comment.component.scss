@@ -1,0 +1,201 @@
+.groupomania {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    .post {
+        display: flex;
+        margin: 30px;
+        width: 1270px;
+        .product {
+            margin-right: 30px;
+            box-shadow: #3366FF 0px 2px 4px 0px, #3366FF 0px 2px 16px 0px;
+            font-family: 'Cardo', serif;
+            border: 2px solid #3366FF;
+            border-radius: 15px;
+            padding: 0px 20px 20px 20px;
+            background-color: #cedaff;
+            overflow: hidden;
+            
+            width: 40%;
+            .up {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: -30px;
+            }
+            .down {
+                #date {
+                    
+                    margin-bottom: 35px;
+                }
+                #message {
+                    overflow-wrap: anywhere;
+                    margin-bottom: 45px;
+                }
+            }
+            .buttons {
+                display: flex;
+                justify-content: space-around;
+                button {
+                    background-color: #cedaff;
+                    border: 2px solid #9bb6ff;
+                    padding: 12px 32px;
+                    margin-bottom: 20px;
+                    border-radius: 7px;
+                    transition: all 0.4s ease-in-out;
+                    cursor: pointer;
+                    will-change: transform;
+                    &:hover {
+                        background-color: #3366FF;
+                        color: white;
+                        border: 2px solid #cedaff;
+                        transform: scale(1.15);
+                    }
+                }
+            }
+        }
+        .createForm {
+            box-shadow: #3366FF 0px 2px 4px 0px, #3366FF 0px 2px 16px 0px;
+            font-family: 'Cardo', serif;
+            border: 2px solid #3366FF;
+            border-radius: 15px;
+            padding-top: 0px;
+            padding-left: 15px;
+            padding-bottom: 56px;
+            background-color: #cedaff;
+            width: 35%;
+            .message {
+                margin-bottom: 15px;
+                h3 {
+                    margin-left: 35%;
+                    margin-bottom: 10%;
+                }
+                input {
+                    border-radius: 4px;
+                    box-sizing: border-box;
+                    width: 47%;
+                    border: 2px solid #9bb6ff;
+                    border-top: none;
+                    background-color: #E8F0FE;
+                    padding: 12px 20px;
+                    transition: width 0.4s ease-in-out;
+                    &:focus {
+                        width: 81%;
+                    }
+                }
+            }
+            .submit {
+                button {
+                    background-color: #cedaff;
+                    border: 2px solid #9bb6ff;
+                    padding: 12px 32px;
+                    margin-left: 35%;
+                    margin-top: 10px;
+                    border-radius: 7px;
+                    transition: all 0.4s ease-in-out;
+                    cursor: pointer;
+                    will-change: transform;
+                    &:hover {
+                        background-color: #3366FF;
+                        color: white;
+                        border: 2px solid #cedaff;
+                        transform: scale(1.15);
+                    }
+                }
+            }
+        }
+    }
+    
+    .comment {
+        margin-bottom: 30px;
+        margin-left: 30px;
+        font-family: 'Cardo', serif;
+        border: 1px solid #9bb4ff;
+        border-radius: 15px;
+        padding: 0px 20px 20px 20px;
+        background-color: #cedaff;
+        width: 40%;
+        .card {
+            .up {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: -30px;
+            }
+            .down {
+                #date {
+                    
+                    margin-bottom: 35px;
+                }
+                #message {
+                    overflow-wrap: anywhere;
+                    margin-bottom: 45px;
+                }
+            }
+        }
+    }
+    .buttons {
+        display:flex;
+        justify-content: space-around;
+        button {
+            background-color: #cedaff;
+            border: 2px solid #9bb6ff;
+            padding: 12px 32px;
+            margin-bottom: 20px;
+            border-radius: 7px;
+            transition: all 0.4s ease-in-out;
+            cursor: pointer;
+            will-change: transform;
+            &:hover {
+                background-color: #3366FF;
+                color: white;
+                border: 2px solid #cedaff;
+                transform: scale(1.15);
+            }
+        }
+    }
+    .modifyForm {
+        font-family: 'Cardo', serif;
+        border-radius: 15px;
+        padding-left: 15px;
+        background-color: #cedaff;
+        margin-left: 10px;
+        .message {
+            margin-bottom: 15px;
+            #message {
+                border-radius: 4px;
+                box-sizing: border-box;
+                width: 51%;
+                border: 2px solid #9bb6ff;
+                border-top: none;
+                background-color: #E8F0FE;
+                padding: 12px 20px;
+                transition: width 0.4s ease-in-out;
+                &:focus {
+                    width: 80%;
+                }
+            }
+        }
+        .submitModify {
+            button {
+                background-color: #cedaff;
+                border: 2px solid #9bb6ff;
+                padding: 12px 32px;
+                margin-left: 32%;
+                margin-top: 10px;
+                margin-bottom: 0%;
+                border-radius: 7px;
+                transition: all 0.4s ease-in-out;
+                cursor: pointer;
+                will-change: transform;
+                &:hover {
+                    background-color: #3366FF;
+                    color: white;
+                    border: 2px solid #cedaff;
+                    transform: scale(1.15);
+                }
+            }
+        }
+    }
+}
+    

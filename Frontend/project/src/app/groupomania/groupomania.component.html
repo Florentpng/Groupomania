@@ -1,17 +1,37 @@
 <div class="groupomania">
     <div class="post">
-        <h4><a [href]="postUrl">Make a post</a></h4>
+        <a [href]="postUrl">
+            <h4>Make a post</h4>
+        </a>
     </div>
-    <div class="products">
-        <div *ngFor='let product of products'>
-            <div class="card">
-                <div class="up">
-                    <h3 id="title">{{ product.title }}</h3>
-                    <p id="name-lname">{{ product.name }} {{ product.lastName }}</p>
-                </div>
+    <div class="center">
+        <div class="product" *ngFor='let product of products'>
+            <div class="up">
+                <h3 id="title">{{ product.title }}</h3>
+                <p id="name-lname">{{ product.name }} {{ product.lastName }}</p>
+            </div>
+            <div class="down">
                 <p id="date">{{ product.date.split("T")[0] }}</p>
                 <p id="message">{{ product.message }}</p>
             </div>
+            <div class="buttons" *ngIf="userId === product.userId">
+                <button (click)="ngOnModify(product.productId, product.userId)">Modify my post</button>
+                <button (click)="ngOnDelete(product.productId, product.userId)">Delete my post</button>
+            </div>
+            <div class="modifyForm" *ngIf="next === product.productId">
+                <div class="title form">
+                    <label for="userTitle">Title: </label>
+                    <input name="title" type="text" id="title" [(ngModel)]="modifyTitle">
+                </div>
+                <div class="message form">
+                    <label for="userMessage">Message: </label>
+                    <input name="message" type="text" id="message" [(ngModel)]="modifyMessage">
+                </div>
+                <div class="submit form">
+                    <button (click)="ngOnPostModify(product, product.productId)">Confirm</button>
+                </div>
+            </div>
+            <button id="seeComments" (click)="ngOnComment(product.productId)">See all comments</button>
         </div>
     </div>
 </div>

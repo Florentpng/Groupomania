@@ -6,6 +6,7 @@ const mysql = require('mysql');
 const productRoutes = require('./routes/product');
 const userRoutes = require('./routes/user');
 const profileRoutes = require('./routes/profile');
+const commentRoutes = require('./routes/comment');
   
 var con = mysql.createConnection({ // Created the Connection
     host: "localhost",
@@ -39,5 +40,6 @@ app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use('/api/product', productRoutes)
 app.use('/api/auth', userRoutes);
 app.use('/api/profile', profileRoutes)
+app.use('/api/comment', commentRoutes)
 
 module.exports = app;

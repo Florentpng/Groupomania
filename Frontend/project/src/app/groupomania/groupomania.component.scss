@@ -1,10 +1,17 @@
 .groupomania {
     display: flex;
     flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
     .post {
-        position: fixed;
-        margin-top: 20px;
         margin-right: 20px;
+        margin-top: 20px;
+        border-radius: 20px;
+        padding: 0px 20px;
+        box-shadow: #3366FF 0px 2px 4px 0px, #3366FF 0px 2px 16px 0px;
+        border: 2px solid #3366FF;
+        border-radius: 15px;
+        background-color: #cedaff;
         transition: all 0.4s ease-in-out;
         cursor: pointer;
         will-change: transform;
@@ -12,23 +19,17 @@
             transform: scale(1.15);
         }
         a {
-            border-radius: 20px;
-            padding: 12px 20px;
-            box-shadow: #3366FF 0px 2px 4px 0px, #3366FF 0px 2px 16px 0px;
             font-family: 'Cardo', serif;
-            border: 2px solid #3366FF;
-            border-radius: 15px;
-            background-color: #cedaff;
             text-decoration: none;
             color: black;
         }
     }
-    .products {
-        margin-left: 15px;
-        .card {
-            margin-bottom: 30px;
-            margin-top: 30px;
-            width: 50%;
+    .center {
+        margin-left: 20px;
+        margin-top: 40px;
+        width: 50%;
+        .product {
+            margin-bottom: 40px;
             box-shadow: #3366FF 0px 2px 4px 0px, #3366FF 0px 2px 16px 0px;
             font-family: 'Cardo', serif;
             border: 2px solid #3366FF;
@@ -36,15 +37,106 @@
             padding: 0px 20px 20px 20px;
             background-color: #cedaff;
             overflow: hidden;
+            display: grid;
             .up {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 margin-bottom: -30px;
-                
             }
-            #date {
-                font-size: 15px;
+            .down {
+                #date {
+                    
+                    margin-bottom: 35px;
+                }
+                #message {
+                    overflow-wrap: anywhere;
+                    margin-bottom: 45px;
+                }
+            }
+            .buttons {
+                display: flex;
+                justify-content: space-around;
+                button {
+                    background-color: #cedaff;
+                    border: 2px solid #9bb6ff;
+                    padding: 12px 32px;
+                    margin-bottom: 20px;
+                    border-radius: 7px;
+                    transition: all 0.4s ease-in-out;
+                    cursor: pointer;
+                    will-change: transform;
+                    &:hover {
+                        background-color: #3366FF;
+                        color: white;
+                        border: 2px solid #cedaff;
+                        transform: scale(1.15);
+                    }
+                }
+            }
+            .modifyForm {
+                font-family: 'Cardo', serif;
+                .form {
+                    margin-bottom: 10px;
+                }
+                .title {
+                    margin-left: 12%;
+                    input {
+                        border-radius: 4px;
+                        box-sizing: border-box;
+                        width: 79%;
+                        border: 2px solid #9bb6ff;
+                        border-top: none;
+                        background-color: #E8F0FE;
+                        padding: 12px 20px;
+                    }
+                }
+                .message {
+                    margin-left: 12%;
+                    input {
+                        border-radius: 4px;
+                        box-sizing: border-box;
+                        width: 74.5%;
+                        border: 2px solid #9bb6ff;
+                        border-top: none;
+                        background-color: #E8F0FE;
+                        padding: 12px 20px;
+                    }
+                }
+                .submit {
+                    margin-bottom: 20px;
+                }
+                button {
+                    background-color: #cedaff;
+                    border: 2px solid #9bb6ff;
+                    padding: 12px 32px;
+                    margin-left: 40%;
+                    border-radius: 7px;
+                    transition: all 0.4s ease-in-out;
+                    cursor: pointer;
+                    will-change: transform;
+                    &:hover {
+                        background-color: #3366FF;
+                        color: white;
+                        border: 2px solid #cedaff;
+                        transform: scale(1.15);
+                    }
+                }
+            }
+            #seeComments {
+                background-color: #cedaff;
+                border: 2px solid #9bb6ff;
+                padding: 12px 32px;
+                margin-bottom: 20px;
+                border-radius: 7px;
+                transition: all 0.4s ease-in-out;
+                cursor: pointer;
+                will-change: transform;
+                &:hover {
+                    background-color: #3366FF;
+                    color: white;
+                    border: 2px solid #cedaff;
+                }
             }
         }
     }  
