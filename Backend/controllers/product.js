@@ -98,6 +98,17 @@ exports.deleteProduct = (req, res, next) => {
         productId: {type: Sequelize.STRING, unique: true}
     });
     Product.destroy({ where: { productId: req.params.productId }})
+
+    var Comment = sequelize.define('comment', {
+        userId: {type: Sequelize.STRING},
+        lastName: Sequelize.STRING,
+        date: Sequelize.DATE,
+        message: Sequelize.STRING,
+        name: Sequelize.STRING,
+        productId: {type: Sequelize.STRING},
+        commentId: {type: Sequelize.STRING, unique: true}
+    });
+    Comment.destroy({ where: { productId: req.params.productId}})
         .then(() => res.status(200).json({ message: 'Produit supprimé !' }))
         .catch(error => res.status(400).json({ error }))
 }

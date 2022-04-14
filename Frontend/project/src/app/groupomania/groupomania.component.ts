@@ -10,7 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 export class GroupomaniaComponent implements OnInit {
 
   private urlDeleteProduct = "http://localHost:3000/api/product/"
-
+  private urlModifyProduct = "http://localHost:3000/api/product/"
+  private urlDeleteComment = "http://localHost:3000/api/comment/"
   
   postUrl: string = ''
 
@@ -49,6 +50,10 @@ export class GroupomaniaComponent implements OnInit {
   ngOnDelete(productId: any, userId: any) {
     if (userId = this.userId) {
       this.httpService.getDeleteProduct(this.urlDeleteProduct + productId).subscribe(
+        (response) => { this.posts = response},
+        (error) => { console.log(error)}
+      );
+      this.httpService.getDeleteComment(this.urlDeleteComment + productId).subscribe(
         (response) => { this.posts = response;
           if (this.posts.status == 200) {
             location.reload();
@@ -84,7 +89,7 @@ export class GroupomaniaComponent implements OnInit {
     if (this.modifyMessage === '') {
       this.modifyMessage = product.message
     }
-    this.httpService.getModifyProduct(this.urlDeleteProduct + productId, product, this.modifyMessage, this.modifyTitle).subscribe(
+    this.httpService.getModifyProduct(this.urlModifyProduct + productId, product, this.modifyMessage, this.modifyTitle).subscribe(
       (response) => { this.posts = response; 
         if (this.posts.status == 200) {
           location.reload();

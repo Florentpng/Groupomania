@@ -10,9 +10,13 @@ import { ActivatedRoute } from '@angular/router';
 export class CommentComponent implements OnInit {
 
   private urlExistProfile = "http://localHost:3000/api/profile/exist/";
+  private urlProfile = "http://localHost:3000/api/profile/";
+
   private urlProduct = "http://localHost:3000/api/product/";
+
   private urlAllComment = "http://localHost:3000/api/comment/";
   private urlDeleteComment = "http://localHost:3000/api/comment/"
+  private urlModifyComment = "http://localHost:3000/api/comment/"
 
   posts : any;
   comments: any;
@@ -20,15 +24,12 @@ export class CommentComponent implements OnInit {
 
   profileUrl: string = ''
 
-  formMessage: string = '';
   modifyMessage: string = '';
-  modifyTitle: string = '';
   
   connected: boolean = false;
   exist: boolean = false;
 
   productId: string = '';
-  userId: string = '';
 
   next: {} = "";
 
@@ -38,12 +39,20 @@ export class CommentComponent implements OnInit {
   date: string = '';
   message: string = '';
 
+  userId: string = '';
+  CommentName: string = '';
+  CommentLastName: string = '';
+  CommentDate = new Date();
+  formMessage: string = '';
+  CommentAge: number = 0;
+
   constructor(private route: ActivatedRoute, private httpService: HttpService) { }
 
   ngOnInit(): void {
     this.ngGetUserId(),
     this.ngGetProductId(),
     this.ngGetExistProfile(),
+    this.ngGetProfile(),
     this.ngGetAllComment(),
     this.ngSetUrl(),
     this.ngGetProduct()
@@ -53,7 +62,18 @@ export class CommentComponent implements OnInit {
       this.httpService.getExistProfile(this.urlExistProfile + this.userId).subscribe(
         (response) => { this.posts = response; this.exist = response.exist},
         (error) => { console.log(error);});
-    }
+  }
+  ngGetProfile() {
+    this.httpService.getProfile(this.urlProfile + this.userId).subscribe(
+      (response) => {
+        this.posts = response; 
+        this.CommentName = response.name;
+        this.CommentLastName = response.lastName;
+        this.CommentAge = response.age;
+      },
+      (error) => { console.log(error);});
+  }
+
 
   ngGetProductId() {
     this.route.queryParams.subscribe(params => {
@@ -101,7 +121,7 @@ export class CommentComponent implements OnInit {
       alert("You can't send a blank message")
     }
     else {
-      this.httpService.getCreateComment(this.userId, this.formMessage, this.lastName, this.date, this.name, this.productId).subscribe(
+      this.httpService.getCreateComment(this.userId, this.formMessage, this.CommentLastName, this.CommentDate, this.CommentName, this.productId).subscribe(
       (response) => { this.posts = response; 
         if (this.posts.status == 201) {
           location.reload();
@@ -118,7 +138,7 @@ export class CommentComponent implements OnInit {
     if (this.modifyMessage === '') {
       this.modifyMessage = comment.message
     }
-    this.httpService.getModifyComment(this.urlDeleteComment + commentId, comment, this.modifyMessage,).subscribe(
+    this.httpService.getModifyComment(this.urlModifyComment + commentId, comment, this.modifyMessage,).subscribe(
       (response) => { this.posts = response; 
         if (this.posts.status == 200) {
           location.reload();

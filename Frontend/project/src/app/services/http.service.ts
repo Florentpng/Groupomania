@@ -58,7 +58,7 @@ export class HttpService {
     return this.http.put(urlModifyProduct, {product, messageForm, titleForm}, {observe: 'response'});
   }
 
-  getCreateComment(userId: string, message: string, lastName: string, date: string, name: string, productId: string) {
+  getCreateComment(userId: string, message: string, lastName: string, date: Date, name: string, productId: string) {
     return this.http.post(this.urlCreateComment, {userId, message, lastName, date, name, productId}, {observe: 'response'});
   }
   getAllComment(urlAllComment: string) {

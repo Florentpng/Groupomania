@@ -82,7 +82,7 @@ exports.deleteComment = (req, res, next) => {
         productId: {type: Sequelize.STRING},
         commentId: {type: Sequelize.STRING, unique: true}
     });
-    Comment.destroy({ where: { commentId: req.params.commentId }})
+    Comment.destroy({ where: { commentId: req.params.commentId}})
         .then(() => res.status(200).json({ message: 'Commentaire supprimé !' }))
         .catch(error => res.status(400).json({ error }))
 }

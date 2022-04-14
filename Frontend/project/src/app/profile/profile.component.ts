@@ -92,7 +92,6 @@ export class ProfileComponent implements OnInit {
   ngOnNext() {
     this.next = 1
   }
-
   ngOnModify() {
     this.httpService.getModifyProfile(this.urlDeleteProfile+ this.userId, this.userId, this.modifyName, this.modifyLastName, this.modifyAge).subscribe(
       (response) => { this.posts = response;
