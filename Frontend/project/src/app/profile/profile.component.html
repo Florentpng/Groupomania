@@ -1,0 +1,56 @@
+<div *ngIf="connected === true" class="groupomania">
+    <div *ngIf="exist === false && created === 0" class="formulaire">
+        <h2>You haven't created a profile yet !</h2>
+        <button (click)="click = 1" class="button">Create a profile</button>
+        <div *ngIf="click === 1" class="createForm">
+            <div class="name form">
+                <label for="userName">First name: </label>
+                <input name="name" type="text" id="name" [(ngModel)]="formName">
+            </div>
+            <div class="lastName form">
+                <label for="userlastName">Last name: </label>
+                <input name="lastName" type="text" id="lastName" [(ngModel)]="formLastName">
+            </div>
+            <div class="age form">
+                <label for="userAge">Age: </label>
+                <input name="age" type="number" id="age" [(ngModel)]="formAge">
+            </div>
+            <div class="submit form">
+                <button (click)="ngOnPost()">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="exist === true || created === 1" class="profile">
+        <h3>Name: {{ name }}</h3>
+        <h3>Last name: {{ lastName }}</h3>
+        <p>Age: {{ age }}</p>
+        <div class="buttons">
+            <button (click)="ngOnDelete()">Delete my profile</button>
+            <button (click)="ngOnNext()">Modify my profile</button>
+        </div>
+        
+        <div *ngIf="next === 1" class="modifyForm">
+            <div class="name form">
+                <label for="userName">First name: </label>
+                <input name="name" type="text" id="name" [(ngModel)]="modifyName">
+            </div>
+            <div class="lastName form">
+                <label for="userlastName">Last name: </label>
+                <input name="lastName" type="text" id="lastName" [(ngModel)]="modifyLastName">
+            </div>
+            <div class="age form">
+                <label for="userAge">Age: </label>
+                <input name="age" type="number" id="age" [(ngModel)]="modifyAge">
+            </div>
+            <div class="submit form">
+                <button (click)="ngOnModify()">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="connected === false" class="notCo">
+    <h3>You are not connected. Please register <a href="http://localhost:4200/register">here</a>.</h3>
+    <h3>Or login <a href="http://localhost:4200/login">here</a>.</h3>
+</div>

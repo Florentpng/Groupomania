@@ -1,0 +1,24 @@
+<div *ngIf="connected === true && exist === true" class="groupomania">
+    <div class="createForm">
+        <div class="title form">
+            <label for="userTitle">Title: </label>
+            <input name="title" type="text" id="title" [(ngModel)]="formTitle">
+        </div>
+        <div class="message form">
+            <label for="userMessage">Message: </label>
+            <input name="message" type="text" id="message" [(ngModel)]="formMessage">
+        </div>
+        <div class="submit form">
+            <button (click)="ngOnPost()">Confirm</button>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="connected === false" class="notCo">
+    <h3>You are not connected. Please register <a href="http://localhost:4200/register">here</a>.</h3>
+    <h3>Or login <a href="http://localhost:4200/login">here</a>.</h3>
+</div>
+
+<div *ngIf="exist === false && connected === true" class="notExist">
+    <h3>You need to create a profile, you can create one <a [href]="profileUrl">here</a>.</h3>
+</div>

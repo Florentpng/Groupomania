@@ -1,0 +1,60 @@
+<div *ngIf="connected === false" class="notCo">
+    <h3>You can't comment if you are not connected. Please register <a href="http://localhost:4200/register">here</a>.</h3>
+    <h3>Or login <a href="http://localhost:4200/login">here</a>.</h3>
+</div>
+
+<div *ngIf="exist === false && connected === true" class="notExist">
+    <h3>You need to create a profile, you can create one <a [href]="profileUrl">here</a>.</h3>
+</div>
+
+<div *ngIf="connected === true && exist === true" class="groupomania">
+    <div class="post">
+        <div class="product">
+            <div class="up">
+                <h3 id="title">{{ title }}</h3>
+                <p id="name-lname">{{ name }} {{ lastName }}</p>
+            </div>
+            <div class="down">
+                <p id="date">{{ date.split("T")[0] }}</p>
+                <p id="message">{{ message }}</p>
+            </div>
+        </div>
+        <div class="createForm">
+            <div class="message form">
+                <h3>Make a comment</h3>
+                <label for="userMessage">Message: </label>
+                <input name="message" type="text" id="message" [(ngModel)]="formMessage">
+            </div>
+            <div class="submit form">
+                <button (click)="ngOnPost()">Confirm</button>
+            </div>
+        </div>
+    </div>
+        
+    <div class="comment" *ngFor='let comment of comments'>
+        <div class="card">
+            <div class="up">
+                <p id="name-lname">{{ comment.name }} {{ comment.lastName }} </p>
+            </div>
+            <div class="down">
+                <p id="date">{{ comment.date.split("T")[0] }}</p>
+                <p id="message">{{ comment.message }}</p>
+            </div>
+        </div>
+        <div class="buttons" *ngIf="userId === comment.userId">
+            <button (click)="ngOnModify(comment.commentId, comment.userId)">Modify my comment</button>
+            <button (click)="ngOnDelete(comment.commentId, comment.userId)">Delete my comment</button>
+        </div>
+        <div class="modify" *ngIf="next === comment.commentId">
+            <div class="modifyForm">
+               <div class="message form">
+                   <label for="userMessage">Message: </label>
+                   <input name="message" type="text" id="message" [(ngModel)]="modifyMessage">
+               </div>
+               <div class="submitModify form">
+                   <button (click)="ngOnPostModify(comment, comment.commentId)">Confirm</button>
+               </div>
+           </div>
+       </div> 
+    </div>
+</div>
