@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     
   }
-
   ngOnPost() {
     this.httpService.getPostsLogin(this.email, this.password).subscribe(
       (response) => { this.posts = response;

@@ -66,7 +66,7 @@ export class ProfileComponent implements OnInit {
       }},
       (error) => { console.log(error); });
   }
-
+  
   ngGetProfile() {
     this.httpService.getProfile(this.urlProfile + this.userId).subscribe(
       (response) => {

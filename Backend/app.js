@@ -34,6 +34,8 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use(bodyParser.json())
+
 app.use('/api/product', productRoutes)
 app.use('/api/auth', userRoutes);
 app.use('/api/profile', profileRoutes)
