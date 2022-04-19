@@ -63,6 +63,7 @@ export class CommentComponent implements OnInit {
         (response) => { this.posts = response; this.exist = response.exist},
         (error) => { console.log(error);});
   }
+  
   ngGetProfile() {
     this.httpService.getProfile(this.urlProfile + this.userId).subscribe(
       (response) => {
@@ -73,7 +74,6 @@ export class CommentComponent implements OnInit {
       },
       (error) => { console.log(error);});
   }
-
 
   ngGetProductId() {
     this.route.queryParams.subscribe(params => {
