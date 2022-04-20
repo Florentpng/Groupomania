@@ -23,6 +23,12 @@
                 align-items: center;
                 margin-bottom: -30px;
             }
+            @media screen and (max-width: 560px) {
+                .up {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+            }
             .down {
                 #date {
                     
@@ -54,6 +60,11 @@
                 }
             }
         }
+        @media screen and (max-width: 430px) {
+            .product {
+                width: 60%
+            }
+        }
         .createForm {
             box-shadow: #3366FF 0px 2px 4px 0px, #3366FF 0px 2px 16px 0px;
             font-family: 'Cardo', serif;
@@ -69,6 +80,11 @@
                 h3 {
                     margin-left: 35%;
                     margin-bottom: 10%;
+                }
+                @media screen and (max-width: 999px) {
+                    h3 {
+                        margin-left: 0;
+                    }
                 }
                 input {
                     border-radius: 4px;
@@ -102,7 +118,30 @@
                         transform: scale(1.15);
                     }
                 }
+                @media screen and (max-width: 300px) {
+                    button {
+                        
+                        padding: 12px 10px;
+                    }
+                }
+                @media screen and (max-width: 999px) {
+                    button {
+                        margin-left: 0;
+                        
+                    }
+                }
             }
+        }
+        @media screen and (max-width: 999px) {
+            .createForm {
+                padding-bottom: 0;
+                width: auto;
+            }
+        }
+    }
+    @media screen and (max-width: 999px) {
+        .post {
+            width: auto
         }
     }
     
@@ -154,6 +193,11 @@
             }
         }
     }
+    @media screen and (max-width: 600px) {
+        .buttons {
+            display: initial;
+        }
+    }
     .modifyForm {
         font-family: 'Cardo', serif;
         border-radius: 15px;
@@ -193,6 +237,12 @@
                     color: white;
                     border: 2px solid #cedaff;
                     transform: scale(1.15);
+                }
+            }
+            @media screen and (max-width: 438px) {
+                button {
+                    margin-left: 0;
+                    padding: 12px 10px;
                 }
             }
         }
