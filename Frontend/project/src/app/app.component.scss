@@ -10,7 +10,17 @@ header {
         border-radius: 50px 0 0 50px;
         img {
             width: 35%
-        } 
+        }
+        @media screen and (max-width: 700px) {
+            img {
+                width: 45%
+            }
+        }
+        @media screen and (max-width: 600px) {
+            img {
+                width: 100%
+            }
+        }
     }
     .gradiant {
         box-shadow: white 0px -30px 36px -28px inset;
@@ -24,6 +34,12 @@ header {
             linear-gradient(135deg, white 25%, transparent 25%);
         background-size: 50px 50px;
         background-color: #3366FF;
+    }
+
+    @media screen and (max-width: 999px) {
+        .gradiant {
+            display: none;
+        }
     }
     
     nav {
@@ -55,6 +71,14 @@ header {
                 }
             }
         }
+
+        @media screen and (max-width: 999px) {
+            .register a{
+                padding: 0;
+                border: none;
+            }
+        }
+
         .login {
             a {
                 font-family: 'Palanquin Dark', sans-serif;
@@ -70,6 +94,14 @@ header {
                 }
             }
         }
+
+        @media screen and (max-width: 999px) {
+            .login a{
+                padding: 0;
+                border: none;
+            }
+        }
+
         .profile {
             a {
                 font-family: 'Palanquin Dark', sans-serif;
@@ -84,6 +116,18 @@ header {
                     background-color: white;
                 }
             }
+        }
+
+        @media screen and (max-width: 999px) {
+            .profile a{
+                padding: 0;
+                border: none;
+            }
+        }
+    }
+    @media screen and (max-width: 999px) {
+        nav {
+            flex-direction: column;
         }
     }
 }
@@ -102,6 +146,16 @@ footer {
         img {
             width: 35%
         }
+        @media screen and (max-width: 700px) {
+            img {
+                width: 45%
+            }
+        }
+        @media screen and (max-width: 600px) {
+            img {
+                width: 100%
+            }
+        }
     }
     .gradiant {
         box-shadow: white 0px 30px 36px -28px inset;
@@ -116,6 +170,13 @@ footer {
         background-size: 50px 50px;
         background-color: white;
     }
+
+    @media screen and (max-width: 999px) {
+        .gradiant {
+            display: none;
+        }
+    }
+
     .social {
         border-top: 2px solid #3366FF;
         border-bottom: 2px solid #3366FF;

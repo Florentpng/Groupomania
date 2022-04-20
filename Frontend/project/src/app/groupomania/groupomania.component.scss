@@ -74,6 +74,11 @@
                     }
                 }
             }
+            @media screen and (max-width: 500px) {
+                .buttons {
+                    display: initial
+                }
+            }
             .modifyForm {
                 font-family: 'Cardo', serif;
                 .form {
@@ -122,6 +127,12 @@
                         transform: scale(1.15);
                     }
                 }
+                @media screen and (max-width: 500px) {
+                    button {
+                        margin-left: 0;
+                        padding: 12px 10px;
+                    }
+                }
             }
             #seeComments {
                 background-color: #cedaff;
@@ -138,6 +149,17 @@
                     border: 2px solid #cedaff;
                 }
             }
+            @media screen and (max-width: 438px) {
+                #seeComments {
+                    margin-left: 0;
+                    padding: 12px 10px;
+                }
+            }
         }
     }  
+}
+@media screen and (max-width: 438px) {
+    .groupomania {
+        display: initial
+    }
 }
