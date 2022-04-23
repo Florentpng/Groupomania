@@ -38,6 +38,7 @@ export class CommentComponent implements OnInit {
   title: string = '';
   date: string = '';
   message: string = '';
+  imageUrl: string = "";
 
   userId: string = '';
   CommentName: string = '';
@@ -99,6 +100,7 @@ export class CommentComponent implements OnInit {
         this.date = response.date;
         this.message = response.message;
         this.name = response.name;
+        this.imageUrl = response.imageUrl;
       },
       (error) => { console.log(error);});
   }

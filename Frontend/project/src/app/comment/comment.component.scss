@@ -38,6 +38,11 @@
                     overflow-wrap: anywhere;
                     margin-bottom: 45px;
                 }
+                .image {
+                    img {
+                        width: 100%
+                    }
+                }
             }
             .buttons {
                 display: flex;

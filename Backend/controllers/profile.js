@@ -91,6 +91,7 @@ exports.modifyProfile = (req, res, next) => {
         date: Sequelize.DATE,
         message: Sequelize.STRING,
         name: Sequelize.STRING,
+        imageUrl:Sequelize.STRING,
         productId: {type: Sequelize.STRING, unique: true}
     });
     Product.update(
