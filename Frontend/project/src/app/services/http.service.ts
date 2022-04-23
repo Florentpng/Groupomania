@@ -13,7 +13,6 @@ export class HttpService {
   private urlCreateProfile = "http://localHost:3000/api/profile/create";
 
   private urlAllProduct = "http://localHost:3000/api/product";
-  private urlCreateProduct = "http://localHost:3000/api/product/create";
 
   private urlCreateComment = "http://localHost:3000/api/comment/create";
   
@@ -48,10 +47,8 @@ export class HttpService {
   getProduct(urlProduct: string) {
     return this.http.get<any>(urlProduct);
   }
-  getCreateProduct(userId: string, title: string, message: string, imageUrl: string, date: Date, name: string, lastName: string) {
-    return this.http.post(this.urlCreateProduct, {userId, title, message, date, imageUrl, name, lastName}, {observe: 'response'});
-  }
-  getDeleteProduct(urlDeleteProduct: string) {
+  
+  getDeleteProduct(urlDeleteProduct: string ) {
     return this.http.delete(urlDeleteProduct, {observe: 'response'});
   }
   getModifyProduct(urlModifyProduct: string, product: {}, messageForm: any, titleForm: any) {

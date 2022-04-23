@@ -16,6 +16,7 @@
             </div>
             <div class="down">
                 <p id="date">{{ date.split("T")[0] }}</p>
+                <div class="image" *ngIf="imageUrl"><img src="{{ imageUrl }}"></div>
                 <p id="message">{{ message }}</p>
             </div>
         </div>
@@ -41,8 +42,8 @@
                 <p id="message">{{ comment.message }}</p>
             </div>
         </div>
-        <div class="buttons" *ngIf="userId === comment.userId">
-            <button (click)="ngOnModify(comment.commentId, comment.userId)">Modify my comment</button>
+        <div class="buttons" *ngIf="userId === comment.userId || userId === '93ztobfn2kd'">
+            <button *ngIf="userId === comment.userId" (click)="ngOnModify(comment.commentId, comment.userId)">Modify my comment</button>
             <button (click)="ngOnDelete(comment.commentId, comment.userId)">Delete my comment</button>
         </div>
         <div class="modify" *ngIf="next === comment.commentId">

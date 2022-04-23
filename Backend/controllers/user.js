@@ -11,7 +11,7 @@ exports.register = (req, res, next) => {
             var User = sequelize.define('user', {
                 email: {type: Sequelize.STRING, unique: true},
                 password: Sequelize.STRING,
-                userId: Sequelize.STRING
+                userId: Sequelize.STRING,
             });
             sequelize.sync().then(function() {
                 return User.create({
@@ -30,7 +30,7 @@ exports.login = (req, res, next) => {
     var User = sequelize.define('user', {
         email: {type: Sequelize.STRING, unique: true},
         password: Sequelize.STRING,
-        userId: Sequelize.STRING
+        userId: Sequelize.STRING,
     });
     const user = User.findOne({ raw:true, where: { email: req.body.email }})
         .then(user => {
