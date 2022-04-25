@@ -57,7 +57,7 @@ exports.createProduct = ((req, res, next) => {
                 date: req.body.date,
                 message: req.body.message,
                 name: req.body.name,
-                imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`,
+                imageUrl: `${req.protocol}://${req.get('host')}/multimedia/${req.file.filename}`,
                 productId: Math.random().toString(36).slice(2)
             });
         } else {
@@ -98,7 +98,7 @@ exports.modifyProduct = (req, res, next) => {
                 date: req.body.date,
                 message: req.body.message,
                 name: req.body.name,
-                imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`,
+                imageUrl: `${req.protocol}://${req.get('host')}/multimedia/${req.file.filename}`,
                 productId: req.params.productId
             },
             {
@@ -127,8 +127,8 @@ exports.modifyProduct = (req, res, next) => {
         .catch(error => res.status(400).json({ error }));
     } if (req.body.deleteImage === "true") {
         
-            const filename = req.body.imageUrl.split('/images/')[1];
-            fs.unlink(`images/${filename}`, () => {
+            const filename = req.body.imageUrl.split('/multimedia/')[1];
+            fs.unlink(`multimedia/${filename}`, () => {
         Product.update(
             {
                 userId: req.body.userId,
@@ -165,8 +165,8 @@ exports.deleteProduct = (req, res, next) => {
     const product = Product.findOne({ raw:true, where: { productId: req.params.productId }})
     .then(product => {
         if (product.imageUrl != null) {
-            const filename = product.imageUrl.split('/images/')[1];
-            fs.unlink(`images/${filename}`, () => {
+            const filename = product.imageUrl.split('/multimedia/')[1];
+            fs.unlink(`multimedia/${filename}`, () => {
                 Product.destroy({ where: { productId: req.params.productId }})
             });
         } else {

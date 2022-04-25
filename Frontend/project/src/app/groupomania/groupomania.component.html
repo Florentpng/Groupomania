@@ -12,7 +12,12 @@
             </div>
             <div class="down">
                 <p id="date">{{ product.date.split("T")[0] }}</p>
-                <div class="image" *ngIf="product?.imageUrl"><img src="{{ product.imageUrl }}"></div>
+                <div class="image" *ngIf="product?.imageUrl && product.imageUrl.slice(-4) == '.jpg'"><img src="{{ product.imageUrl }}"></div>
+                <div class="video" *ngIf="product?.imageUrl && product.imageUrl.slice(-4) == '.mp4'">
+                    <video controls width="600">
+                        <source src="{{ product.imageUrl }}" type="video/mp4">
+                    </video>
+                </div>
                 <p id="message">{{ product.message }}</p>
             </div>
             <div class="buttons" *ngIf="userId === product.userId || userId === '93ztobfn2kd'">

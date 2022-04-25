@@ -41,6 +41,12 @@ export class GroupomaniaComponent implements OnInit {
     this.ngGetAllProduct(),
     this.ngSetUrl()
   }
+
+  getMimeType(element: string) {
+    var test = "dvnksjfbjzfg.mp4";
+    test = test.slice(-4)
+    console.log(test)
+  }
   
   ngGetUserId() {
     this.route.queryParams.subscribe(params => {
@@ -124,7 +130,7 @@ export class GroupomaniaComponent implements OnInit {
       formData.append('imageUrl', product.imageUrl );
     }
     if (this.image === "true") {
-      formData.append('image', this.file, this.file.name );
+      formData.append('multimedia', this.file, this.file.name );
     }
     formData.append('userId', this.userId );
     formData.append('title', this.modifyTitle );
