@@ -93,7 +93,7 @@ export class PostComponent implements OnInit {
     formData.append('date', date );
     
     this.http.post(this.urlCreateProduct, formData, {observe: 'response'} ).subscribe((response) => { this.posts = response;
-      if (this.posts.status == 20) {
+      if (this.posts.status == 201) {
         window.location.href='../groupomania?userId='+ this.userId +'';
     }},
     (error) => { console.log(error) })

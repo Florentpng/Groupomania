@@ -16,7 +16,12 @@
             </div>
             <div class="down">
                 <p id="date">{{ date.split("T")[0] }}</p>
-                <div class="image" *ngIf="imageUrl"><img src="{{ imageUrl }}"></div>
+                <div class="image" *ngIf="imageUrl && imageUrl.slice(-4) == '.jpg'"><img src="{{ imageUrl }}"></div>
+                <div class="video" *ngIf="imageUrl && imageUrl.slice(-4) == '.mp4'">
+                    <video controls width="500">
+                        <source src="{{ imageUrl }}" type="video/mp4">
+                    </video>
+                </div>
                 <p id="message">{{ message }}</p>
             </div>
         </div>
