@@ -83,7 +83,7 @@ export class PostComponent implements OnInit {
 
     const formData = new FormData();
     if (this.image === "true") {
-      formData.append('image', this.file, this.file.name );
+      formData.append('multimedia', this.file, this.file.name );
     }
     formData.append('userId', this.userId );
     formData.append('title', this.formTitle );
