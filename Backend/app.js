@@ -11,7 +11,7 @@ const commentRoutes = require('./routes/comment');
 var con = mysql.createConnection({ // Created the Connection
     host: "localhost",
     user: "root",
-    password: "oblivion99"
+    password: "verysecurepwd"
 });
 
 con.connect(function (err) {
