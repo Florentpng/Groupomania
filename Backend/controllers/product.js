@@ -1,6 +1,6 @@
 var Sequelize = require('sequelize');
 const fs = require('fs');
-var sequelize = new Sequelize('groupomania', 'root', 'oblivion99', {
+var sequelize = new Sequelize('groupomania', 'root', 'verysecurepwd', {
     host: 'localhost',
     dialect: 'mysql'
 });
